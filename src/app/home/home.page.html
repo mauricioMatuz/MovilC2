@@ -1,0 +1,73 @@
+<ion-content style="text-align: center !important">
+  <ion-card>
+    <form class="example-form" #formUser="ngForm">
+      <ion-row>
+        <ion-col>
+          <ion-avatar style="margin: 15px auto 0">
+            <img
+              style="text-align: center"
+              src="https://upload.wikimedia.org/wikipedia/commons/1/1e/RPC-JP_Logo.png"
+              alt=""
+            />
+            <ion-icon name="alert-circle-outline"></ion-icon>
+          </ion-avatar>
+          <br />
+          <mat-form-field class="example-full-width">
+            <mat-label style="color: black">Correo</mat-label>
+            <input
+              type="text"
+              #correoCount
+              matInput
+              name="correo"
+              [(ngModel)]="credencial.correo"
+              (keyup)="onKeyUp($event)"
+              maxlength="30"
+              minlength="8"
+              onkeypress="if(this.value.length == 30 ) return false;"
+              required
+            />
+            <mat-hint align="end"> {{correoCount.value.length}} /30 </mat-hint>>
+          </mat-form-field>
+          <br />
+          <br />
+          <mat-form-field class="example-full-width">
+            <mat-label style="color: black">Contraseña</mat-label>
+            <input
+              type="password"
+              #contraCount
+              matInput
+              name="contrasena"
+              [(ngModel)]="credencial.contrasena"
+              maxlength="30"
+              (keyup)="onKeyContra($event)"
+              onkeypress="if(this.value.length==20) return false;"
+              required
+            />
+            <mat-hint align="end"> {{contraCount.value.length}} /20 </mat-hint>>
+            <mat-hint style="color: black; font-size: 12px"
+              >{{alertaPassword}}</mat-hint
+            >
+          </mat-form-field>
+          <br />
+          <br />
+          <ion-button
+            (click)="onSubmit(formUser)"
+            [disabled]=" credencial.verificacionContra==false"
+          >
+            INICIAR SESION
+          </ion-button>
+          <br />
+          <ion-button routerLink="/register">REGISTRAR USUARIO</ion-button>
+          <br />
+          <br />
+          <ion-text>
+            <ion-label
+              ><br />
+              <a href="/recuperacion-correo">¿Olvidaste tu contraseña?</a><br />
+            </ion-label>
+          </ion-text>
+        </ion-col>
+      </ion-row>
+    </form>
+  </ion-card>
+</ion-content>

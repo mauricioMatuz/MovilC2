@@ -1,0 +1,74 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Videojuegos</ion-title>
+    <ion-button (click)="loguts()" slot="end"
+      ><ion-icon name="exit-outline"></ion-icon> Cerrar Sesion
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content style="text-align: center !important">
+  <ion-slides
+    pager="true"
+    pager="true"
+    #slider
+    (ionSlidesDidLoad)="slidesDidLoad(slider)"
+  >
+    <ion-slide>
+      <ion-card>
+        <img src="https://i.blogs.es/b2ec36/warzone/1366_2000.jpeg" alt="" />
+      </ion-card>
+    </ion-slide>
+
+    <ion-slide>
+      <ion-card>
+        <img
+          src="https://store-images.s-microsoft.com/image/apps.7464.68123456111492710.61299cdf-1e1b-47cd-9aed-698c30dd02f3.e84dc55c-809d-423b-8fbc-aafc3caa0454"
+        />
+      </ion-card>
+    </ion-slide>
+
+    <ion-slide>
+      <ion-card>
+        <img
+          src="https://generacionxbox.com/wp-content/uploads/2021/09/Halo-Infinite-3.jpg"
+        />
+      </ion-card>
+    </ion-slide>
+
+    <ion-slide>
+      <ion-card>
+        <img
+          src="https://cdn1.epicgames.com/salesEvent/salesEvent/amoguslandscape_2560x1440-3fac17e8bb45d81ec9b2c24655758075"
+        />
+      </ion-card>
+    </ion-slide>
+    <ion-slide>
+      <ion-card>
+        <img src="https://images4.alphacoders.com/174/thumb-1920-174406.jpg" />
+      </ion-card>
+    </ion-slide>
+    <ion-slide>
+      <ion-card>
+        <img src="https://cdn.wallpapersafari.com/49/19/I2Z5bs.jpg" />
+      </ion-card>
+    </ion-slide>
+    <ion-slide>
+      <ion-card>
+        <img src="https://wallpaper.dog/large/982992.jpg" />
+      </ion-card>
+    </ion-slide>
+  </ion-slides>
+  <br />
+  <br /><br /><br />
+  <ion-content>
+    <ion-button expand="block" (click)="scan()"
+      ><ion-icon slot="icon-only" name="qr-code-outline"
+        >SCAN CODE</ion-icon
+      ></ion-button
+    >
+    {{code}}
+  </ion-content>
+
+  <br /><br />
+</ion-content>
